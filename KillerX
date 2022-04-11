@@ -1,0 +1,47 @@
+#!/bin/bash
+
+
+_get_repolink () {
+    local regex
+    regex='(https?)://github.com/.+/.+'
+    if [[ $KILL_REPO == "KillerXspam" ]]
+    then
+        echo "aHR0cHM6Ly9naXRodWIuY29tL0tpbGxlclhhbWFuL0tpbGxlclhzcGFtL2FyY2hpdmUvS2lsbGVyU3F1YWQuemlw" | base64 -d
+    elif [[ $KILL_REPO == "KillerXspam" ]]
+    then
+        echo "aHR0cHM6Ly9naXRodWIuY29tL0tpbGxlclhhbWFuL0tpbGxlclhzcGFtL2FyY2hpdmUvS2lsbGVyU3F1YWQuemlw" | base64 -d
+    elif [[ $KILL_REPO =~ $regex ]]
+    then
+        if [[ $KILL_REPO_BRANCH ]]
+        then
+            echo "${KILL_REPO}/archive/${KILL_REPO_BRANCH}.zip"
+        else
+            echo "${KILL_REPO}/archive/KillerSquad.zip"
+        fi
+    else
+        echo "aHR0cHM6Ly9naXRodWIuY29tL0tpbGxlclhhbWFuL0tpbGxlclhzcGFtL2FyY2hpdmUvS2lsbGVyU3F1YWQuemlw" | base64 -d
+    fi
+}
+
+
+_set_bot () {
+    local zippath
+    zippath="KillerXspam.zip"
+    echo "  Downloading source code ..."
+    wget -q $(_get_repolink) -O "$zippath"
+    echo "  Unpacking Data ..."
+    KILLPATH=$(zipinfo -1 "$zippath" | grep -v "/.");
+    unzip -qq "$zippath"
+    echo "Done"
+    echo "  Cleaning ..."
+    rm -rf "$zippath"
+    sleep 5
+    cd $KILLPATH
+    echo "  Starting.  KILLERXSPAM "
+    echo "KillerXspam"
+
+    python3 ./setup/updater.py ./requirements.txt requirements.txt
+    python3 -m KillerXspam
+}
+
+_set_bot
