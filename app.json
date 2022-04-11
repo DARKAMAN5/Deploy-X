@@ -23,11 +23,6 @@
         "value": "",
         "required": false
       },
-        "ALIVE_NAME": {
-          "description": "Alive Name for ping",
-          "value": "",
-          "required": true
-      },
       "API_HASH": {
         "description": "Fill Api hash Take this value from My.telegram.org",
         "value": "",
