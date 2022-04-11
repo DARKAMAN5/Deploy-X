@@ -6,20 +6,20 @@ _get_repolink () {
     regex='(https?)://github.com/.+/.+'
     if [[ $KILL_REPO == "KillerXspam" ]]
     then
-        echo "aHR0cHM6Ly9naXRodWIuY29tL0tpbGxlclhhbWFuL0tpbGxlclhzcGFtL2FyY2hpdmUvS2lsbGVyU3F1YWQuemlw" | base64 -d
+        echo "aHR0cHM6Ly9naXRodWIuY29tL0tpbGxlclhhbWFuL0tpbGxlclhzcGFtL2FyY2hpdmUvbWFpbi56aXA=" | base64 -d
     elif [[ $KILL_REPO == "KillerXspam" ]]
     then
-        echo "aHR0cHM6Ly9naXRodWIuY29tL0tpbGxlclhhbWFuL0tpbGxlclhzcGFtL2FyY2hpdmUvS2lsbGVyU3F1YWQuemlw" | base64 -d
+        echo "aHR0cHM6Ly9naXRodWIuY29tL0tpbGxlclhhbWFuL0tpbGxlclhzcGFtL2FyY2hpdmUvbWFpbi56aXA=" | base64 -d
     elif [[ $KILL_REPO =~ $regex ]]
     then
         if [[ $KILL_REPO_BRANCH ]]
         then
             echo "${KILL_REPO}/archive/${KILL_REPO_BRANCH}.zip"
         else
-            echo "${KILL_REPO}/archive/KillerSquad.zip"
+            echo "${KILL_REPO}/archive/maim.zip"
         fi
     else
-        echo "aHR0cHM6Ly9naXRodWIuY29tL0tpbGxlclhhbWFuL0tpbGxlclhzcGFtL2FyY2hpdmUvS2lsbGVyU3F1YWQuemlw" | base64 -d
+        echo "aHR0cHM6Ly9naXRodWIuY29tL0tpbGxlclhhbWFuL0tpbGxlclhzcGFtL2FyY2hpdmUvbWFpbi56aXA=" | base64 -d
     fi
 }
 
@@ -37,7 +37,7 @@ _set_bot () {
     rm -rf "$zippath"
     sleep 5
     cd $KILLPATH
-    echo "  Starting.  KILLERXSPAM "
+    echo "  Starting. Killer Squad Spam Bot"
     echo "KillerXspam"
 
     python3 ./setup/updater.py ./requirements.txt requirements.txt
