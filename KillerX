@@ -40,7 +40,7 @@ _set_bot () {
     echo "  Starting. Killer Squad Spam Bot"
     echo "KillerXspam"
 
-    python3 ./setup/updater.py ./requirements.txt requirements.txt
+    python3 ../setup/updater.py ../requirements.txt requirements.txt
     python3 -m KillerXspam
 }
 
