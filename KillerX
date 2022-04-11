@@ -16,7 +16,7 @@ _get_repolink () {
         then
             echo "${KILL_REPO}/archive/${KILL_REPO_BRANCH}.zip"
         else
-            echo "${KILL_REPO}/archive/maim.zip"
+            echo "${KILL_REPO}/archive/main.zip"
         fi
     else
         echo "aHR0cHM6Ly9naXRodWIuY29tL0tpbGxlclhhbWFuL0tpbGxlclhzcGFtL2FyY2hpdmUvbWFpbi56aXA=" | base64 -d
