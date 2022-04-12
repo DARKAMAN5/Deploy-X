@@ -67,3 +67,7 @@
 ## cʀεᴅɪᴛs
 
 - 💖 [яιzσεℓ](https://t.me/TheRizoel) » ғᴏʀ ʙᴀsᴇ ᴄᴏᴅᴇs
+
+##ᴄʀεαтεʀ
+
+- 💖 [кιℓℓεяXαмαη](https://t.me/AMAN_GURJAR_XD)
